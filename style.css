@@ -1,1 +1,178 @@
-/* Add you CSS here */
+/* Simple stylesheet for Raoul Eno's beginner portfolio
+	 Comments explain what each block does so you can edit as you learn.
+*/
+
+/* Color variables: change these to tweak the colour scheme */
+:root {
+	/* Darker, less-contrasty burnt sienna and matching accents */
+	--burnt-sienna: #7A2D1A; /* darker burnt sienna */
+	--accent: #5E2416;      /* darker accent */
+	--cream: #FFF3E6;       /* warm light for cards and buttons */
+	--text-dark: #2b2b2b;   /* readable dark text for content */
+	--text-light: #FFF8F3;  /* softer page text instead of pure white */
+}
+
+/* Basic page setup */
+* { box-sizing: border-box; }
+body {
+	margin: 0;
+	/* Use Cuprum for body text (as requested) with sensible fallbacks */
+	font-family: 'Cuprum', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+	background: var(--burnt-sienna);
+	/* Use a softer off-white for page text to reduce contrast */
+	color: var(--text-light);
+	line-height: 1.5;
+}
+
+/* A centered container with consistent horizontal padding */
+.container {
+	max-width: 1000px;
+	margin: 0 auto;
+	padding: 20px 20px;
+}
+
+/* Header: shows your name and navigation */
+.site-header {
+	padding: 12px 0;
+}
+.header-inner {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.site-title {
+	margin: 0;
+	font-size: 1.25rem;
+	font-weight: 700;
+	color: #fff;
+}
+.site-nav a {
+	color: #fff;
+	text-decoration: none;
+	margin-left: 16px;
+	font-weight: 600;
+}
+.site-nav a:hover { text-decoration: underline; }
+
+/* HERO / WELCOME: large, welcoming section */
+.hero {
+	position: relative; /* create stacking context for overlays */
+	padding: 80px 0;
+	text-align: left;
+}
+/* The ::before element shows the background image and applies a blur */
+.hero::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background-image: url('img/Spider-man_shadow.png');
+	background-size: cover;
+	background-position: center;
+	filter: blur(6px) brightness(0.85);
+	transform: scale(1.03); /* avoid sharp edges when blurred */
+	z-index: 0;
+}
+/* The ::after element adds a grey translucent film to improve text legibility */
+.hero::after {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background-color: rgba(80,80,80,0.45); /* grey film */
+	z-index: 1;
+}
+.hero .container { padding-top: 8px; position: relative; z-index: 2; }
+.hero h2 { margin: 0 0 8px 0; font-size: 2rem; color: var(--text-light); font-family: 'Space Grotesk', sans-serif; }
+.lead { margin: 0 0 16px 0; color: #fff; opacity: 0.95; }
+.btn {
+	display: inline-block;
+	background: var(--cream);
+	color: var(--accent);
+	padding: 8px 14px;
+	border-radius: 6px;
+	text-decoration: none;
+	font-weight: 700;
+}
+
+/* Sections (About, Skills, Projects, Contact) use light cards for readability */
+section.about,
+section.skills,
+section.projects,
+section.contact {
+	background: var(--cream);
+	color: var(--text-dark);
+	margin: 30px auto;
+	border-radius: 8px;
+	box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+.site-title {
+	font-family: 'Space Grotesk', sans-serif;
+}
+
+section h2 { margin-top: 0; font-family: 'Space Grotesk', sans-serif; }
+
+/* Skills: icons above text, left-aligned layout */
+.skill-list {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 16px;
+	justify-content: flex-start; /* align to the left */
+	align-items: flex-start;
+}
+.skill-item {
+	display: flex;
+	flex-direction: column; /* stack icon above text */
+	align-items: center;
+	text-align: center;
+	width: 120px; /* fixed width for uniform layout */
+}
+.skill-icon {
+	width: 32px;
+	height: 32px;
+	margin-bottom: 8px; /* space between icon and text */
+	opacity: 0.9;
+}
+.skill {
+	background: var(--burnt-sienna);
+	color: white;
+	padding: 8px 12px;
+	border-radius: 16px;
+	font-weight: 600;
+	display: inline-block;
+	word-wrap: break-word;
+}
+
+/* Projects grid: two columns on wider screens, stacked on small screens */
+.projects-grid {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 16px;
+	padding-bottom: 16px;
+}
+.project-card {
+	background: var(--cream);
+	border-radius: 8px;
+	overflow: hidden;
+	flex: 1 1 calc(50% - 16px);
+	box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+}
+.project-card a { color: inherit; text-decoration: none; display: block; padding: 12px; }
+.project-img { width: 100%; height: auto; display: block; border-radius: 4px; background: #f5f5f5; }
+.project-title { margin: 12px 0 6px 0; font-size: 1.1rem; }
+.project-desc { margin: 0; color: #444; }
+
+/* Contact and social links */
+.contact .social-links ul { list-style: none; padding: 0; margin: 8px 0 24px 0; }
+.contact .social-links li { margin-bottom: 6px; }
+.contact a { color: var(--accent); }
+
+/* Footer */
+.site-footer { text-align: center; padding: 18px 0; color: rgba(255,255,255,0.9); }
+
+/* Small responsive adjustments */
+@media (max-width: 700px) {
+	.header-inner { flex-direction: column; align-items: flex-start; gap: 12px; }
+	.project-card { flex: 1 1 100%; }
+	.hero h2 { font-size: 1.5rem; }
+}
+
+/* End of stylesheet */

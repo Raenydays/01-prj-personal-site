@@ -2,10 +2,127 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>My Personal Site</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Raoul Eno — Portfolio</title>
+  <!-- Load the header and body fonts from Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&family=Cuprum:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Add your HTML content here -->
+  <!-- SITE HEADER: shows your name and simple navigation -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <h1 class="site-title">Raoul's Test Field</h1>
+      <!-- Navigation links jump to sections on this page -->
+      <nav class="site-nav">
+        <a href="#welcome">Welcome</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- WELCOME / HERO SECTION -->
+    <section id="welcome" class="hero">
+      <div class="container">
+        <h2>Welcome — I'm Raoul</h2>
+        <p class="lead">I build simple, useful projects while learning web development and data skills.</p>
+        <!-- A gentle prompt to view projects -->
+        <a class="btn" href="#projects">See Projects</a>
+      </div>
+    </section>
+
+    <!-- ABOUT ME: short paragraph about you -->
+    <section id="about" class="about">
+      <div class="container">
+        <h2>About Me</h2>
+        <p>
+          Hi there! My name is Raoul Eno, and I'm a student building projects for my web development course. I enjoy working with data,
+          using tools like SQL and Excel, and experimenting with generative AI to create useful web experiences.
+        </p>
+      </div>
+    </section>
+
+    <!-- SKILLS: list of skills with icons -->
+    <section id="skills" class="skills">
+      <div class="container">
+        <h2>Skills</h2>
+        <!-- Each skill has an icon above it; center the entire list -->
+        <div class="skill-list">
+          <div class="skill-item">
+            <img class="skill-icon" src="img/folder_data_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.png" alt="Generative AI icon">
+            <span class="skill">Generative AI</span>
+          </div>
+          <div class="skill-item">
+            <img class="skill-icon" src="img/database_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.png" alt="SQL icon">
+            <span class="skill">SQL</span>
+          </div>
+          <div class="skill-item">
+            <img class="skill-icon" src="img/chart_data_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.png" alt="Excel icon">
+            <span class="skill">Microsoft Excel</span>
+          </div>
+          <div class="skill-item">
+            <img class="skill-icon" src="img/data_info_alert_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.png" alt="Data Analysis icon">
+            <span class="skill">Data Analysis / Cleaning</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS: cards where you can add links and a small preview image -->
+    <section id="projects" class="projects">
+      <div class="container">
+        <h2>Projects</h2>
+        <p class="hint">Add more project cards below. Each card links to the live project or repo.</p>
+
+        <div class="projects-grid">
+          <!-- Example project card: edit title, description and the link -->
+          <article class="project-card">
+            <a href="#" target="_blank" rel="noopener noreferrer">
+              <!-- Inline SVG data URL used as a harmless default preview image -->
+              <img class="project-img" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='600' height='360'><rect width='100%' height='100%' fill='%23ffffff'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='%23A0522D' font-size='24'>Project Preview</text></svg>" alt="Project preview">
+              <h3 class="project-title">Project Title</h3>
+              <p class="project-desc">Short description of the project and the technologies used.</p>
+            </a>
+          </article>
+
+          <!-- Duplicate this block to add more projects. Replace href and text. -->
+          <article class="project-card">
+            <a href="#" target="_blank" rel="noopener noreferrer">
+              <img class="project-img" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='600' height='360'><rect width='100%' height='100%' fill='%23ffffff'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='%23A0522D' font-size='24'>Project Preview</text></svg>" alt="Project preview">
+              <h3 class="project-title">Project Two</h3>
+              <p class="project-desc">Another short description; link to the live demo or repository.</p>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT: simple contact area with an email link and social links below -->
+    <section id="contact" class="contact">
+      <div class="container">
+        <h2>Contact</h2>
+        <!-- This mailto link opens the user's email client. Replace the address with your real email. -->
+        <p>If you'd like to reach me, send an email to <a href="mailto:raeno101@gmail.com">raeno101@gmail.com</a>.</p>
+
+        <!-- Social links: edit or add more as you get them -->
+        <div class="social-links">
+          <p>Find me on:</p>
+          <ul>
+            <li><a href="https://www.linkedin.com/in/raouleno/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>© Raoul Eno — Student Portfolio</small>
+    </div>
+  </footer>
 </body>
 </html>
